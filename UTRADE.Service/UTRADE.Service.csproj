@@ -16,4 +16,8 @@
     <ProjectReference Include="..\UTRADE.Library\UTRADE.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UTRADE.Core\UTRADE.Core.csproj" />
+  </ItemGroup>
+
 </Project>
