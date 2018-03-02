@@ -1,25 +1,25 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" ng-app="TradeApp">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] - UTRADE.Service</title>
+
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/js/app/TradeApp.js"></script>
 
 </head>
 <body>
 
-    <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - UTRADE.Service</p>
-        </footer>
-    </div>
+
 
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+
+
 
     @RenderSection("Scripts", required: false)
 </body>

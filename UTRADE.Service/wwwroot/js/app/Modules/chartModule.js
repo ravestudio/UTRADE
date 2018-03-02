@@ -1,0 +1,1 @@
+angular.module('TradeApp.Charts', ['TradeApp.Charts.Controllers']);

@@ -13,11 +13,11 @@ namespace UTRADE.Service.Controllers
             return View();
         }
 
-        public JsonResult GetData()
+        public JsonResult GetData(string security)
         {
             WebApiClient client = new WebApiClient();
             CandleRepository repo = new CandleRepository(client);
-            var task = repo.GetHistory("GMKN", new DateTime(2018, 1, 30), "1");
+            var task = repo.GetHistory(security, new DateTime(2018, 1, 30), "1");
 
             var candles = task.Result;
 
@@ -27,8 +27,9 @@ namespace UTRADE.Service.Controllers
 
             foreach(ICandle candle in candles)
             {
+                var ticks = candle.begin.ToUniversalTime().Ticks - DatetimeMinTimeTicks;
 
-                long dt = ((candle.begin.ToUniversalTime().Ticks - DatetimeMinTimeTicks) / TimeSpan.TicksPerSecond);
+                long dt = ticks / 10000;
 
                 
 

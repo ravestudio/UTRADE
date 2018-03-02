@@ -2,16 +2,28 @@
     ViewData["Title"] = "Chart Page";
 }
 
+
+<div ng-controller="ChartController">
+        <div>
+            <select name="security" ng-model="security" ng-options="security.id as security.desc for security in securities">
+                <option value="">Please select a security</option>
+            </select>
+        </div>
+</div>
+
+
 <div id="container" style="width:100%; height:400px;"></div>
 
 @section Scripts
 {
+
+    <script src="~/js/app/Modules/chartModule.js"></script>
+    <script src="~/js/app/Modules/controllers.js"></script>
+
     <script>
 
-        $.getJSON('/chart/getData', function (data) {
-
-            // create the chart
-            Highcharts.stockChart('container', {
+        // create the chart
+        var chart = Highcharts.stockChart('container', {
 
             rangeSelector: {
                         buttons: [{
@@ -38,15 +50,11 @@
                 series: [{
                             name: 'AAPL',
                             type: 'candlestick',
-                            data: data,
                             tooltip: {
                                 valueDecimals: 2
                             }
                         }]
             });
-        });
-
-
 
     </script>
 
