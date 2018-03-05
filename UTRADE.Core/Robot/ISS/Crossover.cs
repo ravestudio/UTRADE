@@ -1,0 +1,27 @@
+using System.Collections.Generic;
+using System.Linq;
+
+namespace UTRADE.Core.ISS
+{
+    public class Crossover
+    {
+        private IList<decimal> a = null;
+        private IList<decimal> b = null;
+
+        public Crossover(IList<decimal> A, IList<decimal> B)
+        {
+            a = A;
+            b = B;
+        }
+
+        public bool GetResult()
+        {
+            bool res = false;
+
+            //res = a.Last() > b.Last() && a[a.Count-3] < b[b.Count - 3];
+            res = a.Last() > b.Last();
+
+            return res;
+        }
+    }
+}
