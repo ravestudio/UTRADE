@@ -1,2 +1,2 @@
-angular.module('TradeApp', ['TradeApp.Charts']);
+angular.module('TradeApp', ['TradeApp.Module']);
 

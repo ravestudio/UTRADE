@@ -9,6 +9,6 @@ namespace UTRADE.Core.Robot
     {
         IList<string> Need();
 
-        StrategyDecision GetDecision(IDictionary<string, IList<ICandle>> data, string name, string currentPos, Security security, DateTime CurrentDt);
+        StrategyDecision GetDecision(IDictionary<string, IList<ICandle>> data, string name, string currentPos, DateTime CurrentDt);
     }
 }
