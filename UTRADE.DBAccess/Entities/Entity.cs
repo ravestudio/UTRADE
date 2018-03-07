@@ -4,6 +4,6 @@ namespace UTRADE.DBAccess.Entities
 {
     public abstract class Entity<TID>
     {
-        public TId Id { get; set; }
+        public TID Id { get; set; }
     }
 }
